@@ -1,0 +1,16 @@
+extends layouts/main_layout.pug
+
+block styles
+    link(rel="stylesheet", href="/admin.css")
+
+block content
+    div.containter
+        h1 Add Post
+        form.form-control-sm.postForm(action="/admin/create", method="post")
+            div
+                label(for="title") Title:
+                input.form-control#title(type="text", name="title")
+            div
+                label(for="content") Content:
+                textarea.form-control#content(name="content", cols="30", rows="10")
+            input.btn-design(type="submit", value="Send") 

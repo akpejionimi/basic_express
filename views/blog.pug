@@ -1,0 +1,17 @@
+extends layouts/main_layout.pug
+
+block styles
+    link(rel="stylesheet", href="/blog.css")
+
+block content
+    div.jumbotron.jumbotron-fluid
+       div.container
+           h1.display-8 Welcome to Cool_Blog
+
+           if allPosts.length > 0
+               ul
+                   each post in allPosts
+                       li.blogs
+                           a(href="/posts/" + post.id) #{post.title}
+           else
+               h2 No Posts
